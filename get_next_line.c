@@ -6,7 +6,7 @@
 /*   By: lilu <lilu@student.42madrid.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:29:17 by lilu              #+#    #+#             */
-/*   Updated: 2025/02/01 20:55:53 by lilu             ###   ########.fr       */
+/*   Updated: 2025/02/03 19:50:09 by lilu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,58 @@ char	*prueba(int	n)
 
 int	main()
 {
-	char	*line;
-	char	*ptemp;
-	int	i;
+	int *p1, *p2, *p3, *p4;
 
-	i = 0;
-	line = (void *) malloc(6 * 1);
-	while (i < 5)
-	{
-		line[i] = i + '0';
-		i++;
-	}
-	line[i] = '\0';
+	printf("almacenada en p1: %p\n", p1);
+	printf("almacenada en p2: %p\n", p2);
+	printf("alamcenada en p3: %p\n", p3);
+	printf("almacenada en p4: %p\n", p4);
+
+	printf("propia ID de p1: %p\n", &p1);
+	printf("propia ID de p2: %p\n", &p2);
+	printf("propia ID de p3: %p\n", &p3);
+	printf("propia ID de p4: %p\n", &p4);
+
+	int	*line;
+	int	x = 9;
+
+	printf("ronda 1 dirección que lleva line:%p\n",line);
 	
-	ptemp = line;
-	printf("ptem:%s\n",ptemp);
-	printf("line:%p\n",line);
-	printf("ptem:%p\n",ptemp);
+	if (line)
+		printf("line != null\n");
+	else
+		printf("line es null\n");
+
+	line = &x;
+	printf("dirección x:%p\n",&x);
+	printf("dirección almacenada line:%p\n",line);
 	
-	printf("%s\n",line);
-	free(line);
-	printf("%s\n",ptemp);
+	if (line)
+		printf("line != null\n");
+	else
+		printf("line es null\n");
+	
+	
+	// int	i;
+
+	// i = 0;
+	// line = (void *) malloc(6 * 1);
+	// while (i < 5)
+	// {
+	// 	line[i] = i + '0';
+	// 	i++;
+	// }
+	// line[i] = '\0';
+	
+	// ptemp = line;
+	
+	// printf("dirección line:%p\n",line);
+	// printf("dirección ptem:%p\n",ptemp);
+	
+	// printf("valor line:%s\n",line);
+	// printf("valor ptem:%s\n",ptemp);
+	// free(line);
+	// printf("%s\n",ptemp);
 	
 	return (0);
 
